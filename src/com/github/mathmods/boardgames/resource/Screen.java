@@ -5,11 +5,6 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 public class Screen extends JPanel implements Runnable {
-
-	/**
-	 * Computed the serialVersionUID
-	 */
-	private static final long serialVersionUID = -4954297815886804142L;
 	
 	Thread thread = new Thread(this);
 	Frame frame;
@@ -25,7 +20,8 @@ public class Screen extends JPanel implements Runnable {
 		thread.run();
 	}
 	
-	public void paintComponent(Graphics g){
+	@Override
+	protected void paintComponent(Graphics g){
 		System.out.println("Tries to draw");
 		g.clearRect(0, 0, frame.getWidth(), frame.getHeight());
 		
