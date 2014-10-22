@@ -4,20 +4,16 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
-public class Screen extends JPanel implements Runnable {
+public class Screen extends JPanel {
 	
-	Thread thread = new Thread(this);
 	Frame frame;
 	Tile[][] tiles;
-	public static boolean running = false;
 	
 	public Screen(Frame frame, Tile[][] tiles){
 		this.frame = frame;
 		this.tiles = tiles;
 		
 		System.out.println("Made screen");
-		
-		thread.run();
 	}
 	
 	@Override
@@ -38,24 +34,6 @@ public class Screen extends JPanel implements Runnable {
 		}
 		
 		System.out.println("drawed");
-		
-	}
-	
-	public void run() {
-		
-		System.out.println("Thread is running");
-		
-		running = true;
-		
-		while(running){
-			repaint();
-			
-			try {
-				Thread.sleep(2);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
 		
 	}
 

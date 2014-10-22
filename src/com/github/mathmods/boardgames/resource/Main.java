@@ -5,6 +5,7 @@ import java.awt.Color;
 public class Main {
 
 	public Tile[][] Tiles;
+	public Frame f;
 	
 	
 	public Main(int boardsizex, int boardsizey, int tilesx, int tilesy, Color[][] colors){
@@ -37,7 +38,7 @@ public class Main {
 		i[1] = boardsizey;
 		i[2] = tilesx;
 		i[3] = tilesy;
-		Frame.invoke(i, Tiles);
+		f = Frame.invoke(i, Tiles);
 	}
 	
 	public Tile[][] getTiles(){
